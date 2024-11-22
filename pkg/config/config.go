@@ -32,9 +32,9 @@ const (
 )
 
 const (
-	SingleDiskMinSizeGiB   = 25
-	MultipleDiskMinSizeGiB = 25
-	HardMinDataDiskSizeGiB = 25
+	SingleDiskMinSizeGiB   = 50
+	MultipleDiskMinSizeGiB = 50
+	HardMinDataDiskSizeGiB = 50
 	MaxPods                = 200
 )
 

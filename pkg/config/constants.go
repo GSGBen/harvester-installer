@@ -25,5 +25,5 @@ const (
 	DefaultCosRecoverySizeMiB = 8192
 
 	DefaultPersistentPercentageNum = 0.3
-	PersistentSizeMinGiB           = 25
+	PersistentSizeMinGiB           = 50
 )
