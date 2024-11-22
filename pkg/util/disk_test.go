@@ -40,13 +40,13 @@ func TestParsePartitionSize(t *testing.T) {
 		},
 		{
 			diskSize:      100 * GiByteMultiplier,
-			partitionSize: "50Gi",
-			result:        50 * GiByteMultiplier,
+			partitionSize: "25Gi",
+			result:        25 * GiByteMultiplier,
 		},
 		{
 			diskSize:      249 * GiByteMultiplier,
-			partitionSize: "50Gi",
-			result:        50 * GiByteMultiplier,
+			partitionSize: "25Gi",
+			result:        25 * GiByteMultiplier,
 		},
 		{
 			diskSize:      2000 * GiByteMultiplier,
