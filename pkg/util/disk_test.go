@@ -31,22 +31,22 @@ func TestParsePartitionSize(t *testing.T) {
 		{
 			diskSize:      2000 * GiByteMultiplier,
 			partitionSize: "0Gi",
-			err:           "Partition size is too small. Minimum 150Gi is required",
+			err:           "Partition size is too small. Minimum 25Gi is required",
 		},
 		{
 			diskSize:      500 * GiByteMultiplier,
 			partitionSize: "0Mi",
-			err:           "Partition size is too small. Minimum 150Gi is required",
+			err:           "Partition size is too small. Minimum 25Gi is required",
 		},
 		{
 			diskSize:      100 * GiByteMultiplier,
 			partitionSize: "50Gi",
-			err:           "Installation disk size is too small. Minimum 250Gi is required",
+			result:        50 * GiByteMultiplier,
 		},
 		{
 			diskSize:      249 * GiByteMultiplier,
 			partitionSize: "50Gi",
-			err:           "Installation disk size is too small. Minimum 250Gi is required",
+			result:        249 * GiByteMultiplier,
 		},
 		{
 			diskSize:      2000 * GiByteMultiplier,
