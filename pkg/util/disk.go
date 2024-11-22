@@ -6,8 +6,8 @@ import (
 )
 
 const (
-	MinDiskSize       = 250 << 30
-	MinPersistentSize = 150 << 30
+	MinDiskSize       = 50 << 30
+	MinPersistentSize = 50 << 30
 	MiByteMultiplier  = 1 << 20
 	GiByteMultiplier  = 1 << 30
 
