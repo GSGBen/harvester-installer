@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	MinDiskSize       = 50 << 30
+	MinDiskSize       = 100 << 30
 	MinPersistentSize = 50 << 30
 	MiByteMultiplier  = 1 << 20
 	GiByteMultiplier  = 1 << 30
@@ -19,7 +19,7 @@ func ParsePartitionSize(diskSizeBytes uint64, partitionSize string) (uint64, err
 	if diskSizeBytes < MinDiskSize {
 		return 0, fmt.Errorf("Installation disk size is too small. Minimum %dGi is required", ByteToGi(MinDiskSize))
 	}
-	actualDiskSizeBytes := diskSizeBytes - fixedOccupiedSize
+	// actualDiskSizeBytes := diskSizeBytes - fixedOccupiedSize
 
 	if !sizeRegexp.MatchString(partitionSize) {
 		return 0, fmt.Errorf("Partition size must end with 'Mi' or 'Gi'. Decimals and negatives are not allowed")
@@ -39,12 +39,12 @@ func ParsePartitionSize(diskSizeBytes uint64, partitionSize string) (uint64, err
 		partitionBytes = size * GiByteMultiplier
 	}
 
-	if partitionBytes < MinPersistentSize {
-		return 0, fmt.Errorf("Partition size is too small. Minimum %dGi is required", ByteToGi(MinPersistentSize))
-	}
-	if partitionBytes > actualDiskSizeBytes {
-		return 0, fmt.Errorf("Partition size is too large. Maximum %dGi is allowed", ByteToGi(actualDiskSizeBytes))
-	}
+	// if partitionBytes < MinPersistentSize {
+	// 	return 0, fmt.Errorf("Partition size is too small. Minimum %dGi is required", ByteToGi(MinPersistentSize))
+	// }
+	// if partitionBytes > actualDiskSizeBytes {
+	// 	return 0, fmt.Errorf("Partition size is too large. Maximum %dGi is allowed", ByteToGi(actualDiskSizeBytes))
+	// }
 
 	return partitionBytes, nil
 }
